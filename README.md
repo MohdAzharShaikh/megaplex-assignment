@@ -1,16 +1,78 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, React application featuring a secure authentication flow, protected routing, and real-time data fetching from a public API (Json Placeholder).
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Core Functionality**
 
-## React Compiler
+* **Secure Authentication**: A fully functional login system with state management.
+* **Protected Routes**: The Dashboard is guarded; unauthorized users are automatically redirected to the Login page.
+* **Data Visualization**: Dynamically fetches and displays user profiles from JSONPlaceholder in a responsive grid.
+* **Error Handling**: Includes a graceful "Retry" mechanism for API failures and meaningful validation messages.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### **Advanced Bonus Features (Requirement 7)**
 
-## Expanding the ESLint configuration
+* **Axios Interceptors**: Globally manages authentication tokens and automatically handles `401 Unauthorized` responses to trigger logouts.
+* **Token Expiry Management**: Implements a session timeout based on timestamps to enhance security.
+* **Environment Configuration**: Uses `.env` files for decoupling the API Base URL and session limits from the source code.
+* **High-Fidelity UI**: Features modern Skeleton Shimmer loaders for an improved perceived performance during data fetching.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔑 Demo Credentials
+
+To access the dashboard, use the following credentials:
+
+* **Username**: `Bret`
+* **Password**: `password123`
+
+*(Note: The system accepts any password as it validates the existence of the username via the public API)*.
+
+## 🛠️ Tech Stack
+
+* **Frontend**: React (Vite).
+* **Routing**: React Router DOM.
+* **API Client**: Axios with custom Interceptors.
+* **Styling**: Pure CSS3 with modern variables and animations.
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**:
+```bash
+git clone https://github.com/MohdAzharShaikh/megaplex-assignment.git
+cd auth-project
+
+```
+
+
+2. **Install dependencies**:
+```bash
+npm install
+
+```
+
+
+3. **Configure Environment Variables**:
+Create a `.env` file in the root directory:
+```env
+VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
+VITE_SESSION_EXPIRY_MS=3600000
+
+```
+
+
+4. **Run the development server**:
+```bash
+npm run dev
+
+```
+
+
+
+## 🌐 Deployment
+
+The project is configured for deployment on **Netlify**.
+
+* **Build Command**: `npm run build`
+* **Publish Directory**: `dist`
+* **Environment Variables**: Ensure `VITE_API_BASE_URL` and `VITE_SESSION_EXPIRY_MS` are added in the Netlify Dashboard.
+
+---
